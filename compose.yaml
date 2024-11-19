@@ -12,6 +12,7 @@ services:
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
     environment:
+      - DB_HOST=rds-db.cs4cdisa3een.ap-southeast-1.rds.amazonaws.com
       - PASSWORD_FILE=/run/secrets/postgresql_password
     secrets:
       - postgresql_password
