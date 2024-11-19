@@ -5,8 +5,8 @@ services:
       ports:
         - "8069:8069"
       volumes:
-#        - /home/ubuntu/efs:/var/lib/odoo
-        - odoo-web-data:/var/lib/odoo
+        - /home/ubuntu/efs:/var/lib/odoo
+#        - odoo-web-data:/var/lib/odoo
 #        - ./config:/etc/odoo
       environment:
         - HOST=rds-db.cs4cdisa3een.ap-southeast-1.rds.amazonaws.com
