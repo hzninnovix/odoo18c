@@ -7,12 +7,12 @@ services:
       volumes:
         - /home/ubuntu/efs:/var/lib/odoo
 #        - odoo-web-data:/var/lib/odoo
-#        - ./config:/etc/odoo
+        - ./config:/etc/odoo
       environment:
         - HOST=rds-db.cs4cdisa3een.ap-southeast-1.rds.amazonaws.com
         - PORT=5432
-        - USER=postgres
-        - PASSWORD=InnovixS2024
+        - USER=odoo
+        - PASSWORD=odoo
 
 volumes:
   odoo-web-data:
