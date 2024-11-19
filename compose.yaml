@@ -7,6 +7,7 @@ services:
     ports:
       - "8069:8069"
     volumes:
+#      - /home/ubuntu/efs:/var/lib/odoo
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
@@ -14,17 +15,17 @@ services:
       - PASSWORD_FILE=/run/secrets/postgresql_password
     secrets:
       - postgresql_password
-  db:
-    image: postgres:15
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_PASSWORD_FILE=/run/secrets/postgresql_password
-      - POSTGRES_USER=odoo
-      - PGDATA=/var/lib/postgresql/data/pgdata
-    volumes:
-      - odoo-db-data:/var/lib/postgresql/data/pgdata
-    secrets:
-      - postgresql_password
+#  db:
+#    image: postgres:15
+#    environment:
+#      - POSTGRES_DB=postgres
+#      - POSTGRES_PASSWORD_FILE=/run/secrets/postgresql_password
+#      - POSTGRES_USER=odoo
+#      - PGDATA=/var/lib/postgresql/data/pgdata
+#    volumes:
+#      - odoo-db-data:/var/lib/postgresql/data/pgdata
+#    secrets:
+#      - postgresql_password
 
   nginx:
     image: nginx:latest
@@ -34,9 +35,9 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       - web
-volumes:
-  odoo-web-data:
-  odoo-db-data:
+#volumes:
+#  odoo-web-data:
+#  odoo-db-data:
 
 secrets:
   postgresql_password:
