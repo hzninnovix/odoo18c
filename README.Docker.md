@@ -20,4 +20,3 @@ docs for more detail on building and pushing.
 
 ### References
 * [Docker's Python guide](https://docs.docker.com/language/python/)
-psql --host=rds-db.cs4cdisa3een.ap-southeast-1.rds.amazonaws.com --port=5432 --dbname=postgres --username=postgres
