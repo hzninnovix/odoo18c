@@ -6,7 +6,7 @@ services:
 #      ports:
 #        - "8069:8069"
       volumes:
-        - /home/ubuntu/s3-drive:/var/lib/odoo
+        - /home/ubuntu/s3-drive/odoo-web-data:/var/lib/odoo
         - ./config:/etc/odoo
       environment:
         - HOST=rds-testing.cs4cdisa3een.ap-southeast-1.rds.amazonaws.com
